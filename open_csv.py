@@ -10,3 +10,6 @@ def read(file):
       
 
 read(file)
+
+if __name__ == '__main__':
+    read(file)
