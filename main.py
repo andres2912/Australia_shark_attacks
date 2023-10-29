@@ -29,7 +29,7 @@ if choice == "1":
     untill_Y = input("Please enter the ending year for the information you want to view: ")
     data_sample = dataSelection.countAttacksByYearRange(from_Y, untill_Y, data) 
     if isinstance(data_sample, dict):
-        plot_title = f"How many attacks happened in Australia since {from_Y} to {untill_Y}"
+        plot_title = f"Attacks happened in Australia since {from_Y} to {untill_Y}"
         internalOptions(data_sample, plot_title)
 
 elif choice == "2":
