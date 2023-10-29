@@ -1,6 +1,6 @@
 import csv
 
-file = "global-shark-attack.csv"
+file = "fatal_shark_attacks.csv"
 
 def read(file):
     """
@@ -13,10 +13,12 @@ def read(file):
     :return: A list of dictionaries containing the CSV data.
     :rtype: list[dict]
     """
-    with open (file, 'r', encoding='utf-8') as csv_read:
-        reader = csv.reader(csv_read, delimiter=';')
+    with open (file, 'r') as csv_read:
+        reader = csv.reader(csv_read, delimiter=',')
         header = next(reader)
         data = [dict (zip(header, row)) for row in reader]
+        
+      
        
 
     return data
