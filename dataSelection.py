@@ -15,25 +15,23 @@ def countAttacksByYearRange(from_Y, untill_Y,data):
     """
     
     selected_data = {}
-    attacks_in_year= 0
     
     try:
         if int(from_Y) <= int(untill_Y):
 
             for d in data:
                 if d['Year'] >= from_Y and d['Year'] <= untill_Y:
-                    attacks_in_year +=1
                     if d['Year'] in selected_data:
                         selected_data[d['Year']] +=1
                     else:
                         selected_data[d['Year']] = 1
- 
-            
 
             if len(selected_data) == 0:
                 raise Exception ("No data found")
             
-            return selected_data
+            data_sorted = dict(sorted(selected_data.items(), key=lambda items: items[0]))
+
+            return data_sorted
                     
         else:
             raise Exception ("Incorrect date range")
@@ -42,4 +40,19 @@ def countAttacksByYearRange(from_Y, untill_Y,data):
         return f"ERROR: {error}"
     
 
+def countBySex(data):
+    """This function receives a list of data and
+    counts how many men and women were attacked by sharks since 1791 to 2022.
+    :param data: The data to analyze.
+    :type data: list[dict]
+    :return: A dictionary with the counts for 'Male' and 'Female' attacks.
+    :rtype: dict
+    """
+    by_sex = {'Male': 0, 'Female': 0}
+    for d in (data):
+        if d['Sex'] in by_sex:
+            by_sex[d['Sex']] += 1
+    
+    return by_sex
+    
 

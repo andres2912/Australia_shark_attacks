@@ -17,7 +17,7 @@ def read(file):
         reader = csv.reader(csv_read, delimiter=',')
         header = next(reader)
         data = [dict (zip(header, row)) for row in reader]
-  
+        
       
        
 
