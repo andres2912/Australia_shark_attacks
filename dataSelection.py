@@ -16,7 +16,7 @@ def countAttacksByYearRange(from_Y, untill_Y,data):
     
     selected_data = {}
     attacks_in_year= 0
-
+    
     try:
         if int(from_Y) <= int(untill_Y):
 
